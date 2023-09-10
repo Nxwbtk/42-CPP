@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 09:26:33 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/08/28 13:45:43 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/09/10 21:46:01 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/09/10 21:46:20 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Contact.hpp"
 
-class PhoneBook
+Contact::Contact(void)
 {
-	public:
-		
-};
+}
 
-#endif
+Contact::~Contact(void)
+{
+}
