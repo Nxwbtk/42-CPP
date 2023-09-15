@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 00:04:55 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/16 02:50:30 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/16 03:46:41 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	PhoneBook::menu(void)
 	std::cout << "*              3.EXIT              *" << std::endl;
 	std::cout << "************************************" << std::endl;
 	std::cout << "Enter your menu: ";
-	std::cin >> input;
+	if (!std::getline(std::cin, input)) return (0);
 	if (!input.compare("1") || !input.compare("ADD") || !input.compare("add"))
 		return (1);
 	else if (!input.compare("2") || !input.compare("SEARCH") || !input.compare("search"))
@@ -92,7 +92,8 @@ std::string	PhoneBook::inputStrCheck(std::string msg)
 	while (res)
 	{
 		std::cout << msg;
-		std::cin >> str;
+		// std::cin >> str;
+		if (!std::getline(std::cin, str)) return ("");
 		res = 0;
 		while (str[i])
 		{
@@ -116,13 +117,14 @@ std::string	PhoneBook::inputNumCheck(std::string msg, unsigned long max, unsigne
 	while (res)
 	{
 		std::cout << msg;
-		std::cin >> str;
+		if (!std::getline(std::cin, str)) return ("");
 		res = 0;
 		while (str[i])
 		{
 			if (isalpha(str[i]))
 			{
 				res = 1;
+				std::cout << "You stupid or what? Please enter only number." << std::endl;
 				break;
 			}
 			i++;
@@ -154,6 +156,11 @@ void	PhoneBook::add(void)
 	fname = this->inputStrCheck("Enter First Name: ");
 	lname = this->inputStrCheck("Enter Last Name: ");
 	phone = this->inputNumCheck("Enter Phone Number: ", 10, 10);
+	if (fname.compare("") == 0 || lname.compare("") == 0 || phone.compare("") == 0)
+	{
+		this->clean();
+		return ;
+	}
 	this->contact[this->index].setFname(fname);
 	this->contact[this->index].setLname(lname);
 	this->contact[this->index].setPhone(phone);
