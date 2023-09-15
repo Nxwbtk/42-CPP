@@ -6,7 +6,7 @@
 #    By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/04 23:53:14 by bsirikam          #+#    #+#              #
-#    Updated: 2023/08/28 09:26:09 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/09/16 00:16:21 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 RM = rm -rf
 
-SRCS = main.cpp
+SRCS = main.cpp PhoneBook.cpp Contact.cpp
 
 all: $(NAME)
 

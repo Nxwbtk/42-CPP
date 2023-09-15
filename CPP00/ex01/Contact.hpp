@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:22:37 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/15 17:12:51 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/16 01:10:30 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ class Contact
 		Contact(void);
 		~Contact(void);
 		void	setUser(int i, std::string fname, std::string lname, std::string phone);
+		std::string getFname(void);
+		std::string getLname(void);
+		std::string getPhone(void);
+		int getIndex(void);
+		void setFname(std::string fname);
+		void setLname(std::string lname);
+		void setPhone(std::string phone);
+		void	printContact(void);
+
+
 };
 
 #endif
