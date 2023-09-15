@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 09:26:33 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/16 02:04:36 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/16 04:53:06 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		void	search(void);
-		void	add(void);
+		int	add(void);
 		int		menu(void);
 		void	run(void);
 		void	clean(void);

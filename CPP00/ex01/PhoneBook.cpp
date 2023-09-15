@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 00:04:55 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/16 03:46:41 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/16 04:57:31 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ void	PhoneBook::run(void)
 		if (!res)
 			return ;
 		else if (res == 1)
-			this->add();
+		{
+			if (!this->add())
+				return ;
+		}
 		else if (res == 2)
 			this->search();
 	}
@@ -144,7 +147,7 @@ void	PhoneBook::clean(void)
 	std::cin.ignore();
 }
 
-void	PhoneBook::add(void)
+int	PhoneBook::add(void)
 {
 	system("clear || cls");
 	std::string fname;
@@ -154,16 +157,27 @@ void	PhoneBook::add(void)
 		this->index = 0;
 	std::cout << "ADD User" << std::endl;
 	fname = this->inputStrCheck("Enter First Name: ");
-	lname = this->inputStrCheck("Enter Last Name: ");
-	phone = this->inputNumCheck("Enter Phone Number: ", 10, 10);
-	if (fname.compare("") == 0 || lname.compare("") == 0 || phone.compare("") == 0)
+	if (fname.compare("") == 0)
 	{
 		this->clean();
-		return ;
+		return (0);
+	}
+	lname = this->inputStrCheck("Enter Last Name: ");
+	if (lname.compare("") == 0)
+	{
+		this->clean();
+		return (0);
+	}
+	phone = this->inputNumCheck("Enter Phone Number: ", 10, 10);
+	if (phone.compare("") == 0)
+	{
+		this->clean();
+		return (0);
 	}
 	this->contact[this->index].setFname(fname);
 	this->contact[this->index].setLname(lname);
 	this->contact[this->index].setPhone(phone);
 	this->index++;
-	this->clean();
+	// this->clean(); It's must enter to continue.
+	return (1);
 }
