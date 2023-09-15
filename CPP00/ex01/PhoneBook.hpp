@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 09:26:33 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/10 21:37:36 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:17:16 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,16 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include "Contact.hpp"
 
 class PhoneBook
 {
+	private:
+		Contact	contact[8];
+		int		index;
 	public:
+		void	search(void);
+		void	add(void);
 };
 
 #endif
