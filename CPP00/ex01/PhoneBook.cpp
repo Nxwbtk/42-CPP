@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 00:04:55 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/16 09:57:46 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/16 10:14:55 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ std::string	PhoneBook::inputNumCheck(std::string msg, unsigned long max, unsigne
 void	PhoneBook::clean(void)
 {
 	std::cout.flush();
-	std::cin.ignore();
+	// std::cin.ignore();
 }
 
 int	PhoneBook::add(void)
@@ -176,6 +176,7 @@ int	PhoneBook::add(void)
 	this->contact[this->index].setLname(lname);
 	this->contact[this->index].setPhone(phone);
 	this->index++;
+	this->clean();
 	// this->clean(); It's must enter to continue.
 	return (1);
 }
