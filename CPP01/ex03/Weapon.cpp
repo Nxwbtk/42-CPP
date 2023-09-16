@@ -6,19 +6,15 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:35:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/17 01:16:38 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/17 03:50:06 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string type): _type(type)
-{
-}
+Weapon::Weapon(std::string type): _type(type) {}
 
-Weapon::~Weapon()
-{
-}
+Weapon::~Weapon() {}
 
 const std::string	&Weapon::getType(void)
 {
