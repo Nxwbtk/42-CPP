@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 00:04:55 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/16 10:14:55 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/16 10:34:46 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ std::string	PhoneBook::inputStrCheck(std::string msg)
 	while (res)
 	{
 		std::cout << msg;
-		if (!std::getline(std::cin, str)) return ("");
+		if (!std::getline(std::cin, str)) return ("_");
 		res = 0;
 		while (str[i])
 		{
@@ -105,6 +105,11 @@ std::string	PhoneBook::inputStrCheck(std::string msg)
 				break;
 			}
 			i++;
+		}
+		if (str.length() <= 0)
+		{
+			std::cout << "Stop input the stupid information. Enter something!" << std::endl;
+			res = 1;
 		}
 	}
 	return (str);
@@ -155,13 +160,13 @@ int	PhoneBook::add(void)
 		this->index = 0;
 	std::cout << "ADD User" << std::endl;
 	fname = this->inputStrCheck("Enter First Name: ");
-	if (fname.compare("") == 0)
+	if (fname.compare("_") == 0)
 	{
 		this->clean();
 		return (0);
 	}
 	lname = this->inputStrCheck("Enter Last Name: ");
-	if (lname.compare("") == 0)
+	if (lname.compare("_") == 0)
 	{
 		this->clean();
 		return (0);
