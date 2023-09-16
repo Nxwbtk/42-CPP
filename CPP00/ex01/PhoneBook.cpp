@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 00:04:55 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/16 04:57:31 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/16 09:57:46 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	PhoneBook::search(void)
 {
 	int	i = 0;
 	std::cout << "============================================================" << std::endl;
-	// std::cout << "|     Index|First Name| Last Name |" << std::endl;
 	std::cout << "|" << std::setw(10) << "Index" << "|";
 	std::cout << std::setw(15) << "First Name" << "|";
 	std::cout << std::setw(15) << "Last Name" << "|";
@@ -95,7 +94,6 @@ std::string	PhoneBook::inputStrCheck(std::string msg)
 	while (res)
 	{
 		std::cout << msg;
-		// std::cin >> str;
 		if (!std::getline(std::cin, str)) return ("");
 		res = 0;
 		while (str[i])
