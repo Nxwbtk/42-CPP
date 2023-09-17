@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Writer.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 12:02:13 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/17 15:04:35 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/09/17 15:03:36 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/09/17 15:12:39 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Writer.hpp"
 
-int	main(int ac, char **av)
+Writer::Writer(std::string filename, std::string s1, std::string s2) : _filename(filename), _s1(s1), _s2(s2) {}
+
+Writer::~Writer() {}
+
+void	Writer::readFile(void)
 {
-	if (ac != 4)
-		return (1);
-	Writer writer(av[1], av[2], av[3]);
 }
