@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:35:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/17 03:50:06 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/17 11:55:44 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ const std::string	&Weapon::getType(void)
 void	Weapon::setType(std::string type)
 {
 	this->_type = type;
+	// std::cout << "Weapon type changed to " << this->_type << std::endl;
 }

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 00:44:52 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/17 11:56:16 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/09/17 12:02:13 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/09/17 12:31:09 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include <string>
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon) {}
-
-HumanA::~HumanA() {}
-
-void	HumanA::attack(void)
+int	main(int ac, char **av)
 {
-	std::cout << this->_name << " attacks with his " << this->_weapon.getType() << std::endl;
+	if (ac != 4)
+		return (1);
+
 }

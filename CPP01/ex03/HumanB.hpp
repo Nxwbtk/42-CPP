@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:43:28 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/17 03:54:36 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/17 11:38:04 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanB
 {
 	private:
-		Weapon	_weapon;
+		Weapon	*_weapon;
 		std::string	_name;
 	public:
 		HumanB(std::string name);
