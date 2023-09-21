@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+         #
+#    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/17 12:00:38 by bsirikam          #+#    #+#              #
-#    Updated: 2023/09/17 12:00:39 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/09/21 02:25:56 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = UnnecessaryViolence
+NAME = Sed
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
@@ -26,7 +26,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 RM = rm -rf
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS = main.cpp Writer.cpp
 
 all: $(NAME)
 
