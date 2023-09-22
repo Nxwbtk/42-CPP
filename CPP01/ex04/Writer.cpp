@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Writer.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 15:03:36 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/22 02:46:31 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/23 02:37:19 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void	Writer::readFile(void)
 void	Writer::writefile(void)
 {
 	readFile();
+	while (this->_line.find(this->_s1) != std::string::npos)
+	{
+		this->_line.insert(this->_line.find(this->_s1) + this->_s1.length() , this->_s2);
+		this->_line.erase(this->_line.find(this->_s1), this->_s1.length());
+	}
+	this->_newfile << this->_line;
 }
 
 int		Writer::makeNewFile(void)
