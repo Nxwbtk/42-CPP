@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 22:53:34 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/24 01:31:26 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/24 04:27:07 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	Fixed::setRawBits(int const raw)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixpoint);
 }
 

@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 01:29:47 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/24 02:52:48 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/24 04:26:56 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	Fixed::setRawBits(int const raw)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixpoint);
 }
 
