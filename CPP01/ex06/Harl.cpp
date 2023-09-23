@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 04:23:04 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/23 15:25:30 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/09/23 15:51:22 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/09/23 16:26:43 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 Harl::Harl(void)
 {
+
 }
 
 Harl::~Harl(void)
 {
+
 }
 
 void	Harl::debug(void)
@@ -55,5 +57,37 @@ void	Harl::complain(std::string level)
 	{
 		if (level.compare(levels[i]) == 0)
 			(this->*f[i])();
+	}
+}
+
+void	Harl::filter(int level)
+{
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int	size = 4;
+
+	if (level == -1)
+	{
+		size = 5;
+		level = 5;
+	}
+	for (int i = level; i <= size; i++)
+	{
+		switch(i) {
+			case 1:
+				complain(levels[0]);
+				break;
+			case 2:
+				complain(levels[1]);
+				break;
+			case 3:
+				complain(levels[2]);
+				break;
+			case 4:
+				complain(levels[3]);
+				break;
+			default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+				break;
+		}
 	}
 }

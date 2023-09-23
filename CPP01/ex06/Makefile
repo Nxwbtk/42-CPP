@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/23 04:22:39 by bsirikam          #+#    #+#              #
-#    Updated: 2023/09/23 15:23:45 by bsirikam         ###   ########.fr        #
+#    Created: 2023/09/23 15:47:36 by bsirikam          #+#    #+#              #
+#    Updated: 2023/09/23 16:16:40 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Harl
+NAME = harlFilter
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror

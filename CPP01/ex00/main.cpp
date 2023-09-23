@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:36:50 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/16 16:52:40 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/23 12:51:50 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	randomChump(std::string name);
 
 int	main(void)
 {
-	Zombie	zombie("Zombie");
-	zombie.announce();
-	randomChump("randomChump");
+    Zombie	zombie("Zombie");
+    zombie.announce();
+    randomChump("randomChump");
 }
