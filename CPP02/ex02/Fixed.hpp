@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 01:28:15 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/24 04:24:46 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/24 12:39:20 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Fixed
 		void setRawBits( int const raw );
 		float toFloat( void ) const;
 		int toInt( void ) const;
-		bool operator>(const Fixed &fixed);
 
 		bool operator>(const Fixed &fixed) const;
 		bool operator<(const Fixed &fixed) const;
