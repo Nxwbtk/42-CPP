@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 12:41:59 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/30 02:42:08 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/09/30 02:44:28 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/09/30 02:59:46 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(void)
+# include <iostream>
+# include "ClapTrap.hpp"
+
+class ScavTrap
 {
-    ClapTrap demo("hello");
+    public:
+        ScavTrap( std::string name );
+        ~ScavTrap(void);
+        ScavTrap(const ScavTrap& copy);
+        ScavTrap& operator=(const ScavTrap& copy);
+};
 
-	demo.attack("hello2");
-	demo.takeDamage(5);
-	demo.beRepaired(5);
-	demo.takeDamage(5);
-	demo.takeDamage(5);
-	demo.takeDamage(5);
-	demo.beRepaired(5);
-    return 0;
-}
+
+#endif
