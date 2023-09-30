@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 06:04:15 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/09/30 18:13:42 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/09/30 22:22:54 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,4 @@ Animal& Animal::operator=(const Animal &cp)
 std::string Animal::getType(void) const
 {
     return (this->_type);
-}
-
-void    Animal::makeSound(void) const
-{
-    std::cout << "Animal sound" << std::endl;
 }
