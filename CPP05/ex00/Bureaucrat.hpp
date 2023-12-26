@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:08:50 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/26 09:40:11 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2023/12/26 10:09:57 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Bureaucrat
 		const std::string	_name;
 		int					_grade;
 	public:
+		Bureaucrat(const std::string &name, const int &grade);
 		Bureaucrat(void);
 		Bureaucrat(const Bureaucrat& cp);
 		~Bureaucrat(void);
@@ -47,5 +48,7 @@ class Bureaucrat
 			}
 	};
 };
+
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat &bureaucrat);
 
 #endif
