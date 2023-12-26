@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
+#    By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 00:07:45 by bsirikam          #+#    #+#              #
-#    Updated: 2023/12/05 00:08:03 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/12/26 10:27:41 by buntakansirikamo ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 RM = rm -rf
 
-SRCS = main.cpp
+SRCS = main.cpp Bureaucrat.cpp
 
 all: $(NAME)
 

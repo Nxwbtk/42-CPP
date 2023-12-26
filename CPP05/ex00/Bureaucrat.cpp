@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:13:02 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/26 10:10:37 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2023/12/26 10:27:59 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Bureaucrat::~Bureaucrat(void)
 	std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, const int &grade): _grade(grade), _name(name)
+Bureaucrat::Bureaucrat(const std::string &name, const int &grade): _name(name), _grade(grade)
 {
 	if (this->_grade < 1)
 	{
