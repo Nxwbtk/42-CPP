@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:08:50 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/05 00:40:33 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/26 09:40:11 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,38 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include <exception>
 
 class Bureaucrat
 {
+	private:
+		const std::string	_name;
+		int					_grade;
 	public:
 		Bureaucrat(void);
 		Bureaucrat(const Bureaucrat& cp);
 		~Bureaucrat(void);
 		Bureaucrat& operator=(const Bureaucrat &cp);
+		std::string getName(void) const;
+		int getGrade(void) const;
+		void	incrementGrade(void);
+		void	decrementGrade(void);
+	class GradeTooHighException: public std::exception
+	{
+		public:
+			const char* what() const throw ()
+			{
+				return ("Grade too high");
+			}
+	};
+	class GradeTooLowException: public std::exception
+	{
+		public:
+			const char* what() const throw()
+			{
+				return ("Grade too low");
+			}
+	};
 };
 
 #endif
