@@ -11,21 +11,21 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
-    try
-    {
-        Bureaucrat  b1("b1", 2);
-        Bureaucrat  b2("b2", 149);
-
-        std::cout << "b1 = " << b1 << std::endl;
-        b1.incrementGrade();
-        std::cout << "b2 = " << b2 << std::endl;
-        b2.decrementGrade();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+	try
+	{
+		Bureaucrat bureau("First", 60);
+		Form form("AForm", 59, 59);
+		std::cout << "Bureaucrat Name: " << bureau.getName() << std::endl;
+		std::cout << "Bureaucrat Grade: " << bureau.getGrade() << std::endl << std::endl;
+		std::cout << form << std::endl << std::endl;
+		bureau.signForm(form);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
