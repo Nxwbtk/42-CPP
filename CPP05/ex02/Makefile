@@ -6,7 +6,7 @@
 #    By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 00:07:45 by bsirikam          #+#    #+#              #
-#    Updated: 2023/12/29 18:22:44 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/12/29 23:18:00 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 RM = rm -rf
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 all: $(NAME)
 
