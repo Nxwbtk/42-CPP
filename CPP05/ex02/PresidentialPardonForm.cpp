@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 02:04:30 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 02:13:56 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 02:19:16 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ PresidentialPardonForm::PresidentialPardonForm( const std::string &target ): AFo
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &cp)
 {
+	if (this != &cp)
+	{
+		this->_target = cp._target;
+	}
+	return (*this);
 };
 
-PresidentialPardonForm	PresidentialPardonForm::getTarget(void) const
+std::string	PresidentialPardonForm::getTarget(void) const
 {
 	return (this->_target);
 };
