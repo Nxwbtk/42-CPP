@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 18:18:23 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 00:14:01 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 03:12:00 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class AForm
 		int				getGradeToExecute(void) const;
 		void			beSigend(const Bureaucrat& bureaucrat);
 		virtual void	execute(Bureaucrat const & executor) const = 0;
-		~AForm(void);
+		virtual			~AForm(void);
 		AForm& operator=(const AForm &cp);
 	class GradeTooHighException: public std::exception
 	{
