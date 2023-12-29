@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 00:15:30 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/29 11:53:58 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 03:10:46 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,27 +42,27 @@ Form& Form::operator=(const Form &cp)
 		this->_signed = cp._signed;
 	}
 	return (*this);
-};
+}
 
 std::string Form::getName(void) const
 {
 	return (this->_name);
-};
+}
 
 bool	Form::getSigned(void) const
 {
 	return (this->_signed);
-};
+}
 
 int	Form::getGradeToSign(void) const
 {
 	return (this->_gradeToSign);
-};
+}
 
 int	Form::getGradeToExecute(void) const
 {
 	return (this->_gradeToExecute);
-};
+}
 
 void	Form::beSigend(const Bureaucrat& bureaucrat)
 {
@@ -75,7 +75,7 @@ void	Form::beSigend(const Bureaucrat& bureaucrat)
 		this->_signed = false;
 		throw GradeTooLowException();
 	}
-};
+}
 
 std::ostream&	operator<<(std::ostream &os, const Form &form)
 {
@@ -83,4 +83,4 @@ std::ostream&	operator<<(std::ostream &os, const Form &form)
 	os << "Grade require to sign: " << form.getGradeToSign() << std::endl;
 	os << "Grade to execute: " << form.getGradeToExecute();
 	return (os);
-};
+}
