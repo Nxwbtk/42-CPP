@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 21:37:07 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/29 23:57:16 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 00:40:28 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
 };
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& cp): AForm(cp.getName(), cp.getGradeToSign(), cp.getGradeToExecute())
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& cp): AForm(cp.getName(), cp.getGradeToSign(), cp.getGradeToExecute()), _target(cp.getTarget())
 {
-	*this = cp;
 };
 
 ShrubberyCreationForm::ShrubberyCreationForm( const std::string &target ): AForm("Shrubbery", 145, 137), _target(target)
@@ -40,7 +39,7 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 	return (this->_target);
 };
 
-void	ShrubberyCreationForm::createTree(void)
+void	ShrubberyCreationForm::createTree(void) const
 {
 	std::ofstream	tonmai;
 	std::string		file_name = this->getTarget() + "_shrubbery";
@@ -110,4 +109,14 @@ void	ShrubberyCreationForm::createTree(void)
 		tonmai << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@&@@&@@@@@@@@@@@@@@@@&@@@@@@@#@@&&&@@@@/@@@@&@@@@/@@@@@&@&&#@@@@@@&@@&&@@%&&&@@@&@@@@@@@@@@@&@@@@&&&@@@@@@&@@@&@@@@@@@" << std::endl;
 	}
 	tonmai.close();
+};
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	if (this->getSigned() == false)
+		throw NotSignedException();
+	if (executor.getGrade() > this->getGradeToExecute())
+		throw GradeTooLowException();
+	std::cout << executor.getName() << " executes " << this->getName() << std::endl;
+	this->createTree();
 };

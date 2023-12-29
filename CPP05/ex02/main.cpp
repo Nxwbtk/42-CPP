@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:08:42 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 00:03:47 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 00:40:46 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	main(void)
 
 		// ShrubberyCreationForm	formS("test_S");
 		// bob.signForm(formS);
-		// formS.createTree();
+		// formS.execute(bob);
+		ShrubberyCreationForm	formS("test_S");
+		ShrubberyCreationForm	formS2(formS);
+		std::cout << formS2.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

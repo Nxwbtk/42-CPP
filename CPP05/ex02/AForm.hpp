@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 18:18:23 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 00:05:21 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 00:14:01 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class AForm
 		int				getGradeToSign(void) const;
 		int				getGradeToExecute(void) const;
 		void			beSigend(const Bureaucrat& bureaucrat);
-		virtual void	execute(Bureaucrat const & executor) const;
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 		~AForm(void);
 		AForm& operator=(const AForm &cp);
 	class GradeTooHighException: public std::exception
