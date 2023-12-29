@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 21:17:31 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 00:30:31 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:31:36 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ class ShrubberyCreationForm: public AForm
 		void	execute(Bureaucrat const & executor) const;
 		std::string	getTarget(void) const;
 		class NotSignedException: public std::exception
-	{
-		public:
-			const char* what() const throw()
-			{
-				return ("Form is not signed");
-			}
-	};
+		{
+			public:
+				const char* what() const throw()
+				{
+					return ("Form is not signed");
+				}
+		};
 };
 
 #endif
