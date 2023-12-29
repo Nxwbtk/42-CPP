@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 00:13:02 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 03:02:59 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/12/30 03:03:15 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,6 @@ void	Bureaucrat::signForm(AForm& form)
 	}
 }
 
-std::ostream&	operator<<(std::ostream &os, const Bureaucrat &Bureaucrat)
-{
-	os << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << std::endl;
-	return (os);
-}
-
 void	Bureaucrat::executeForm(AForm const & form)
 {
 	try {
@@ -100,4 +94,10 @@ void	Bureaucrat::executeForm(AForm const & form)
 	} catch (const std::exception& e) {
 		std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
+}
+
+std::ostream&	operator<<(std::ostream &os, const Bureaucrat &Bureaucrat)
+{
+	os << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << std::endl;
+	return (os);
 }
