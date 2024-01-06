@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ScalaConverter.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 05:04:56 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 05:12:47 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/06 09:08:28 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalaConverter.hpp"
+#include "ScalarConverter.hpp"
 
-ScalaConverter::ScalaConverter(void)
+ScalarConverter::ScalarConverter(void)
 {
 }
 
-ScalaConverter::ScalaConverter( const ScalaConverter & cp )
+ScalarConverter::ScalarConverter( const ScalarConverter & cp )
 {
 	*this = cp;
 }
 
-ScalaConverter::~ScalaConverter(void)
+ScalarConverter::~ScalarConverter(void)
 {
 }
 
-ScalaConverter&	operator=( const ScalaConverter &cp )
+ScalarConverter&	ScalarConverter::operator=( const ScalarConverter &cp )
 {
 	(void)cp;
 	return (*this);

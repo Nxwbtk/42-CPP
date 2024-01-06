@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 05:05:12 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/12/30 05:14:21 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/06 09:07:51 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class	ScalarConverter
 {
 	public:
-		ScalaConverter(void);
-		ScalaConverter( const ScalarConverter & cp );
-		~ScalaConverter(void);
+		ScalarConverter(void);
+		ScalarConverter( const ScalarConverter & cp );
+		~ScalarConverter(void);
 		ScalarConverter & operator=( const ScalarConverter &cp );
 		static void	convert( std::string str );
 };
