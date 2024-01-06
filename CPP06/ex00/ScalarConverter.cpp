@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 10:06:37 by buntakansir       #+#    #+#             */
-/*   Updated: 2024/01/07 00:06:20 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/07 03:20:58 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ScalarConverter::convert( std::string str )
 	convertChar(num);
 	convertInt(num);
 	convertFloat(num);
+	convertDouble(num);
 }
 
 void	ScalarConverter::convertChar( double num )
@@ -63,12 +64,12 @@ void	ScalarConverter::convertChar( double num )
 
 void	ScalarConverter::convertInt( double num )
 {
-	if (isnan(num) || isinf(num))
+	if (isnan(num) || isinf(num) || num > INT_MAX || num < INT_MIN)
 	{
 		std::cout << "int: impossible" << std::endl;
 		return ;
 	}
-	std::cout << "int: " << num << std::endl;
+	std::cout << "int: " << static_cast<int>(num) << std::endl;
 }
 
 void	ScalarConverter::convertFloat( double num )
@@ -79,4 +80,14 @@ void	ScalarConverter::convertFloat( double num )
 		return ;
 	}
 	std::cout << "float: " << std::fixed << std::setprecision(1) << num << "f" << std::endl;
+}
+
+void	ScalarConverter::convertDouble( double num )
+{
+	if (isnan(num) || isinf(num))
+	{
+		std::cout << "double: " << num << std::endl;
+		return ;
+	}
+	std::cout << "double: " << num << std::endl;
 }
