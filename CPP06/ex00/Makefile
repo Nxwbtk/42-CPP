@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+         #
+#    By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 00:07:45 by bsirikam          #+#    #+#              #
-#    Updated: 2023/12/30 05:05:19 by bsirikam         ###   ########.fr        #
+#    Updated: 2024/01/06 10:06:20 by buntakansirikamo ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 RM = rm -rf
 
-SRCS = main.cpp ScarlarConverter.cpp
+SRCS = main.cpp ScalarConverter.cpp
 
 all: $(NAME)
 
