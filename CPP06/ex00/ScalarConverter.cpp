@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 10:06:37 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/06 14:17:14 by buntakansirikamo ###   ########.fr       */
+/*   Created: 2024/01/06 10:06:37 by buntakansir       #+#    #+#             */
+/*   Updated: 2024/01/07 00:06:20 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ScalarConverter::convert( std::string str )
 	num = std::strtod(str.c_str(), &endptr);
 	convertChar(num);
 	convertInt(num);
+	convertFloat(num);
 }
 
 void	ScalarConverter::convertChar( double num )
@@ -77,4 +78,5 @@ void	ScalarConverter::convertFloat( double num )
 		std::cout << "float: " << num << "f" << std::endl;
 		return ;
 	}
+	std::cout << "float: " << std::fixed << std::setprecision(1) << num << "f" << std::endl;
 }
