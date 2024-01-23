@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:42:31 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/22 14:06:49 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/23 10:01:49 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ template <typename T>
 class Array
 {
     private:
-        T   *arr;
+        T				*arr;
+        unsigned int	len;
     public:
         Array();
         Array( unsigned int n );
