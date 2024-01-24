@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:16:17 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/23 10:05:22 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/24 13:28:00 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,20 @@ template <typename T>
 Array<T>::~Array(void)
 {
     delete [] this->arr;
+}
+
+template <typename T>
+T & Array<T>::operator[](unsigned int i)
+{
+    if (i >= this->len)
+        throw OutOfRangeException();
+    return (this->arr[i]);
+}
+
+template <typename T>
+const char * Array<T>::OutOfRangeException::what() const throw()
+{
+    return ("Out of range");
 }
 
 #endif
