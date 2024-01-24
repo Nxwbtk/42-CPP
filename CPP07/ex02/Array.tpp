@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:16:17 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/24 13:30:36 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/24 13:34:32 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ Array<T> & Array<T>::operator=( const Array<T> & cp )
 {
     if (this != &cp)
     {
-        this->len = cp.len;
+        this->len = cp.size();
         delete [] this->arr;
-        this->arr = new T[cp.len];
-        for (unsigned int i = 0; i < cp.len; i++)
+        this->arr = new T[cp.size()];
+        for (unsigned int i = 0; i < cp.size(); i++)
             this->arr[i] = cp.arr[i];
     }
     return (*this);
