@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:42:31 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/24 13:39:20 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/24 13:54:12 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Array
         class   OutOfRangeException: public std::exception
         {
             public:
-                virtual char * what() const throw();
+                virtual const char * what() const throw();
         };        
 };
 

@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:16:17 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/24 13:39:49 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/24 13:54:18 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ T & Array<T>::operator[](unsigned int i)
 }
 
 template <typename T>
-char * Array<T>::OutOfRangeException::what() const throw()
+const char * Array<T>::OutOfRangeException::what() const throw()
 {
     return "Out of range";
 }
