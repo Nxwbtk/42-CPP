@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:42:31 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/23 10:01:49 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/24 13:31:15 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ARRAY_HPP
 
 # include <exception>
+# include "Array.tpp"
 
 template <typename T>
 class Array
@@ -27,6 +28,8 @@ class Array
         ~Array(void);
         Array( const Array & cp );
         Array & operator=( const Array & cp );
+		T & operator[](unsigned int i);
+		unsigned int size() const;
         class   OutOfRangeException: public std::exception
         {
             public:
