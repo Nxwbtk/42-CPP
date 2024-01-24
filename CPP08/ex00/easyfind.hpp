@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:58:38 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/24 15:00:00 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/24 15:03:23 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ class Easyfind
         Easyfind & operator=(const Easyfind & cp);
         ~Easyfind(void);
 };
+
+# include "easyfind.tpp"
 
 #endif
