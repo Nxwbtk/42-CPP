@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 11:42:31 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/24 13:31:15 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/24 13:39:20 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ARRAY_HPP
 
 # include <exception>
-# include "Array.tpp"
 
 template <typename T>
 class Array
@@ -36,5 +35,7 @@ class Array
                 virtual char * what() const throw();
         };        
 };
+
+# include "Array.tpp"
 
 #endif
