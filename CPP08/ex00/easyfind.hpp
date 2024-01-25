@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:58:38 by buntakansirikamo  #+#    #+#             */
-/*   Updated: 2024/01/24 15:03:23 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/25 10:40:42 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 
 #include <iostream>
 
-template <typename T>
-class Easyfind
+class   NotFoundException: public std::exception
 {
-    public:
-        Easyfind(void);
-        Easyfind(const Easyfind & cp);
-        Easyfind & operator=(const Easyfind & cp);
-        ~Easyfind(void);
+    virtual const char* what() const throw()
+    {
+        return ("Not found");
+    }
 };
+
+template <typename T>
+void    easyfind(T& container, int n);
 
 # include "easyfind.tpp"
 
