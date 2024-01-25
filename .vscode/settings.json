@@ -81,7 +81,8 @@
     "memory_resource": "cpp",
     "numeric": "cpp",
     "random": "cpp",
-    "stop_token": "cpp"
+    "stop_token": "cpp",
+    "list": "cpp"
   },
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "clang",
