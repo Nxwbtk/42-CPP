@@ -82,7 +82,9 @@
     "numeric": "cpp",
     "random": "cpp",
     "stop_token": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "map": "cpp",
+    "set": "cpp"
   },
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "clang",

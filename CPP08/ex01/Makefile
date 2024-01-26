@@ -6,11 +6,11 @@
 #    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 11:13:10 by buntakansir       #+#    #+#              #
-#    Updated: 2024/01/26 00:14:33 by bsirikam         ###   ########.fr        #
+#    Updated: 2024/01/26 21:41:31 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = Span
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
