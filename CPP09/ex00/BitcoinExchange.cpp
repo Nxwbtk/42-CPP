@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:22:29 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/28 15:20:46 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/30 02:02:52 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,97 @@ BitcoinExchange::BitcoinExchange( std::string const &input )
 	read_inputfile(input_file);
 }
 
-void	BitcoinExchange::readline(std::string const &line)
+time_t	convert_date(std::string const &date)
+{
+	tm	date_struct = {};
+	time_t	valid_date;
+
+	date_struct.tm_year = std::atoi(date.substr(0, 4).c_str());
+	date_struct.tm_mon = std::atoi(date.substr(5, 2).c_str());
+	date_struct.tm_mday = std::atoi(date.substr(8, 2).c_str());
+	valid_date = mktime(&date_struct);
+	return (valid_date);
+}
+
+bool	check_bad_input(std::string const &line)
 {
 	std::size_t	pipe_pos = line.find('|');
 	std::string date;
-	float	amount;
+	size_t		i;
+	time_t		valid_date;
 
+	i = 0;
 	if (pipe_pos == std::string::npos || pipe_pos != line.rfind('|'))
+		return (false);
+	date = line.substr(0, pipe_pos - 1);
+	if (date.length() != 10)
+		return (false);
+	while (i < date.length())
 	{
-		std::cout << "Error: " << "Wrong Format" << std::endl;
-		return ;
+		if (i == 4 || i == 7)
+		{
+			if (date[i] != '-')
+				return (false);
+		}
+		else if (!isdigit(date[i]))
+			return (false);
+		i++;
 	}
 	date = line.substr(0, pipe_pos - 1);
-	amount = atof(line.substr(pipe_pos + 1).c_str());
+	valid_date = convert_date(date);
+	if (valid_date == -1)
+		return (false);
+	return (true);
+}
+
+void	BitcoinExchange::cal_rate(time_t date, float &amount)
+{
+	std::map<std::string, float>::iterator begin = _database.begin();
+	std::map<std::string, float>::iterator end = _database.end();
+
+	time_t	db_date;
+	(void)date;
+	(void)amount;
+	while (begin != end)
+	{
+		db_date = convert_date(begin->first);
+		if (db_date == date)
+		{
+			std::cout << "BTC at " << begin->first << " = " << begin->second << std::endl;
+			return ;
+		}
+		begin++;
+	}
+}
+
+void	BitcoinExchange::readline(std::string const &line)
+{
+	std::size_t	pipe_pos = line.find('|');
+	float	amount;
+	std::string	amount_str;
+	std::string	date;
+	time_t		valid_date;
+
+	if (!check_bad_input(line))
+	{
+		std::cout << "Error: " << "bad input => " << line << std::endl;
+		return ;
+	}
+	amount_str = line.substr(pipe_pos + 2);
+	amount = atof(amount_str.c_str());
 	if (amount < 0)
 	{
 		std::cout << "Error: " << "not a positive number" << std::endl;
 		return ;
 	}
+	if (amount > 1000)
+	{
+		std::cout << "Error: " << "amount too high" << std::endl;
+		return ;
+	}
+	date = line.substr(0, pipe_pos - 1);
+	valid_date = convert_date(date);
+	cal_rate(valid_date, amount);
 }
 
 void	BitcoinExchange::read_inputfile(std::ifstream &file)
