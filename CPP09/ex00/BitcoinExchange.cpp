@@ -6,7 +6,7 @@
 /*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:22:29 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/28 12:54:11 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/28 15:20:46 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ void	BitcoinExchange::readline(std::string const &line)
 	}
 	date = line.substr(0, pipe_pos - 1);
 	amount = atof(line.substr(pipe_pos + 1).c_str());
+	if (amount < 0)
+	{
+		std::cout << "Error: " << "not a positive number" << std::endl;
+		return ;
+	}
 }
 
 void	BitcoinExchange::read_inputfile(std::ifstream &file)
