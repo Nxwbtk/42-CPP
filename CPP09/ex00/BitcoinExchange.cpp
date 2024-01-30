@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:22:29 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/30 02:02:52 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/30 09:37:50 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,12 @@ void	BitcoinExchange::cal_rate(time_t date, float &amount)
 	std::map<std::string, float>::iterator end = _database.end();
 
 	time_t	db_date;
-	(void)date;
-	(void)amount;
 	while (begin != end)
 	{
 		db_date = convert_date(begin->first);
 		if (db_date == date)
 		{
-			std::cout << "BTC at " << begin->first << " = " << begin->second << std::endl;
+			std::cout << begin->first << " => " << amount << " => " << amount * begin->second << std::endl;
 			return ;
 		}
 		begin++;
