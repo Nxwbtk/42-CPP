@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:22:29 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/30 09:37:50 by buntakansirikamo ###   ########.fr       */
+/*   Updated: 2024/01/30 19:26:42 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,11 @@ bool	check_bad_input(std::string const &line)
 	return (true);
 }
 
-void	BitcoinExchange::cal_rate(time_t date, float &amount)
+void	BitcoinExchange::cal_rate(time_t date, float &amount, std::string date_str)
 {
 	std::map<std::string, float>::iterator begin = _database.begin();
 	std::map<std::string, float>::iterator end = _database.end();
+	std::map<std::string, float>::iterator it;
 
 	time_t	db_date;
 	while (begin != end)
@@ -99,7 +100,15 @@ void	BitcoinExchange::cal_rate(time_t date, float &amount)
 		if (db_date == date)
 		{
 			std::cout << begin->first << " => " << amount << " => " << amount * begin->second << std::endl;
-			return ;
+			break ;
+		}
+		else if (db_date > date)
+		{
+			it = _database.lower_bound(date_str);
+			if (it == _database.end())
+				it--;
+			std::cout << it->first << " => " << amount << " => " << amount * it->second << " price " << it->second << std::endl;
+			break;
 		}
 		begin++;
 	}
@@ -132,7 +141,7 @@ void	BitcoinExchange::readline(std::string const &line)
 	}
 	date = line.substr(0, pipe_pos - 1);
 	valid_date = convert_date(date);
-	cal_rate(valid_date, amount);
+	cal_rate(valid_date, amount, date);
 }
 
 void	BitcoinExchange::read_inputfile(std::ifstream &file)
@@ -178,7 +187,8 @@ void	BitcoinExchange::add_data(std::string const &line)
 	}
 	date = line.substr(0, n);
 	price = line.substr(n + 1);
-	cprice = atof(price.c_str());
+	cprice = std::stod(price);
+	std::cout << date << " => " << cprice << std::endl;
 	_database.insert(std::pair<std::string, float>(date, cprice));
 }
 
