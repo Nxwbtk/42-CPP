@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:22:29 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/30 19:36:11 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:41:17 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	BitcoinExchange::cal_rate(time_t date, float &amount, std::string date_str)
 			it = _database.lower_bound(date_str);
 			if (it == _database.end())
 				it--;
-			std::cout << it->first << " => " << amount << " => " << amount * it->second << std::endl;
+			std::cout << date_str << " => " << amount << " => " << amount * it->second << std::endl;
 			break;
 		}
 		begin++;
