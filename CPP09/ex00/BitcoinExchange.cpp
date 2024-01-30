@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:22:29 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/30 19:26:42 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:34:39 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ bool	BitcoinExchange::check_database( std::string const &dbname )
 void	BitcoinExchange::add_data(std::string const &line)
 {
 	std::string	date, price;
-	size_t		cprice;
+	float		cprice;
 	std::string::size_type	n;
 
 	n = line.find(',');
@@ -187,8 +187,7 @@ void	BitcoinExchange::add_data(std::string const &line)
 	}
 	date = line.substr(0, n);
 	price = line.substr(n + 1);
-	cprice = std::stod(price);
-	std::cout << date << " => " << cprice << std::endl;
+	cprice = atof(price.c_str());
 	_database.insert(std::pair<std::string, float>(date, cprice));
 }
 

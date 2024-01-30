@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: buntakansirikamonthip <buntakansirikamonth +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 23:57:58 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/30 19:06:49 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:33:25 by buntakansirikamo ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <map>
 # include <exception>
 # include <cstdlib>
+# include <iomanip>
 
 class BitcoinExchange
 {
