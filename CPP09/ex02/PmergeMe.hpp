@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: bsirikam <bsirikam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 22:17:04 by bsirikam          #+#    #+#             */
-/*   Updated: 2024/01/31 00:29:30 by bsirikam         ###   ########.fr       */
+/*   Updated: 2024/01/31 21:58:25 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class PmergeMe
 {
 	private:
 		std::list<int> _list;
-
+		std::vector<int> _vector;
 	public:
 		PmergeMe();
 		PmergeMe(PmergeMe const &cp);
@@ -32,6 +32,7 @@ class PmergeMe
 		void	run(int ac, char **av);
 		void	add_list(int ac, char **av);
 		void	print_list(const std::list<int> &list);
+		void	print_vector(const std::vector<int> &vector);
 	class IsNegativeException: public std::exception
 	{
 		public:
