@@ -18,12 +18,15 @@
 # include <vector>
 # include <cstdlib>
 # include <list>
+# include <ctime>
 
 class PmergeMe
 {
 	private:
 		std::list<int> _list;
 		std::vector<int> _vector;
+		double	time_ls;
+		double	time_vector;
 	public:
 		PmergeMe();
 		PmergeMe(PmergeMe const &cp);
@@ -33,6 +36,10 @@ class PmergeMe
 		void	add_list(int ac, char **av);
 		void	print_list(const std::list<int> &list);
 		void	print_vector(const std::vector<int> &vector);
+		void	sort_list(void);
+		int		count_list_part(int size);
+		void	merge_list(void);
+		void	move_list(std::list<int>::iterator &it, int position);
 	class IsNegativeException: public std::exception
 	{
 		public:

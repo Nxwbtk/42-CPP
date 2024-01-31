@@ -40,6 +40,7 @@ void	PmergeMe::run(int ac, char **av)
 	add_list(ac - 1, av + 1);
 	std::cout << "Before sort: ";
 	print_list(_list);
+	this->sort_list();
 }
 
 void	PmergeMe::add_list(int ac, char **av)
@@ -69,4 +70,34 @@ void	PmergeMe::print_vector(const std::vector<int> &vector)
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
+}
+
+int	PmergeMe::count_list_part(int size)
+{
+	int	res = 0;
+	int	len = size / 2;
+	while (len >= 2)
+	{
+		res++;
+		len /= 2;
+	}
+	return (res);
+}
+
+void	PmergeMe::sort_list(void)
+{
+	clock_t	start = clock();
+	this->merge_list();
+	clock_t finish = clock();
+	this->time_ls = double(finish - start);
+}
+
+void	PmergeMe::merge_list(void)
+{
+	int	size = const_iterator(this->_list.size());
+}
+
+void	PmergeMe::move_list(std::list<int>::iterator &it, int position)
+{
+	
 }
